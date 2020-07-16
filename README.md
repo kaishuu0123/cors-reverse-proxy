@@ -1,5 +1,11 @@
 # CORS Reverse Proxy
 
+[![GitHub release](https://img.shields.io/github/release/kaishuu0123/cors-reverse-proxy.svg)][releases]
+[![Docker Pulls](https://img.shields.io/docker/pulls/kaishuu0123/cors-reverse-proxy.svg)][docker]
+
+[releases]: https://github.com/kaishuu0123/cors-reverse-proxy/releases
+[docker]: https://hub.docker.com/r/kaishuu0123/cors-reverse-proxy/
+
 Simple reverse proxy for CORS issue.
 
 ```plain
