@@ -12,11 +12,17 @@ import (
 )
 
 var (
+	Version  = "unset"
+	Revision = "unset"
+)
+
+var (
 	targetURL     string
 	host          string
 	port          uint64
 	origin        string
 	serverLogging bool
+	version       bool
 )
 
 func init() {
@@ -43,6 +49,7 @@ func init() {
 	pflag.Uint64VarP(&port, "port", "p", envPort, "")
 	pflag.StringVarP(&origin, "origin", "o", envOrigin, "")
 	pflag.BoolVarP(&serverLogging, "server-logging", "l", envServerLogging, "")
+	pflag.BoolVarP(&version, "version", "v", false, "")
 }
 
 func run(targetURL string) error {
@@ -79,6 +86,11 @@ func printHeader() {
 
 func main() {
 	pflag.Parse()
+
+	if version {
+		log.Printf("%s version: %s revision: %s", os.Args[0], Version, Revision)
+		os.Exit(0)
+	}
 
 	if targetURL == "" {
 		log.Fatal("Target URL(--target-url or -t) option is required.")

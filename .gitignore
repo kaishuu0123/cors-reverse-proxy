@@ -1,0 +1,4 @@
+vendor/**/*
+cors-reverse-proxy
+*.swp
+.DS_Store
