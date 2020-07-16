@@ -14,7 +14,7 @@ docker pull kaishuu0123/cors-reverse-proxy
 docker run -it -d \
   -e CORS_REVERSE_PROXY_TARGET_URL=http://example.com \
   -e CORS_REVERSE_PROXY_HOST=0.0.0.0 \
-  -p 8181:8081
+  -p 8181:8081 \
   --name cors-reverse-proxy \
   kaishuu0123/cors-reverse-proxy
 ```
