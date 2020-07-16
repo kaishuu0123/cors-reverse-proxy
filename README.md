@@ -12,6 +12,12 @@ Simple reverse proxy for CORS issue.
 ... has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
 ```
 
+## Use Case
+
+* Local development
+* When you want to trust the resources of a other container
+  * ex.) docker-compose
+
 ## Usage
 
 ```shell
