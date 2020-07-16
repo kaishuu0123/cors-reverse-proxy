@@ -16,7 +16,7 @@ Simple reverse proxy for CORS issue.
 
 * Local development
 * When you want to trust the resources of a other container
-  * ex.) docker-compose
+  * ex. minio, draw.io, piwigo etc ...
 
 ## Usage
 
