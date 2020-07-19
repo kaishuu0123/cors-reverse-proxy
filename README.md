@@ -1,6 +1,6 @@
 # CORS Reverse Proxy
 
-[![ReleaseStatus](https://github.com/kaishuu0123/cors-reverse-proxy/workflows/release/badge.svg)[release_status]
+[![ReleaseStatus](https://github.com/kaishuu0123/cors-reverse-proxy/workflows/release/badge.svg)][release_status]
 [![GitHub release](https://img.shields.io/github/release/kaishuu0123/cors-reverse-proxy.svg)][releases]
 [![Docker Pulls](https://img.shields.io/docker/pulls/kaishuu0123/cors-reverse-proxy.svg)][docker]
 [![Go Report Card](https://goreportcard.com/badge/github.com/kaishuu0123/cors-reverse-proxy)][report]
