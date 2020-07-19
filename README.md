@@ -1,10 +1,14 @@
 # CORS Reverse Proxy
 
+[![ReleaseStatus](https://github.com/kaishuu0123/cors-reverse-proxy/workflows/release/badge.svg)[reelease_status]
 [![GitHub release](https://img.shields.io/github/release/kaishuu0123/cors-reverse-proxy.svg)][releases]
 [![Docker Pulls](https://img.shields.io/docker/pulls/kaishuu0123/cors-reverse-proxy.svg)][docker]
+[![Go Report Card](https://goreportcard.com/badge/github.com/kaishuu0123/cors-reverse-proxy)][report]
 
+[release_status]: https://github.com/kaishuu0123/cors-reverse-proxy/actions?query=workflow%3Arelease
 [releases]: https://github.com/kaishuu0123/cors-reverse-proxy/releases
 [docker]: https://hub.docker.com/r/kaishuu0123/cors-reverse-proxy/
+[report]: https://goreportcard.com/report/github.com/kaishuu0123/cors-reverse-proxy
 
 Simple reverse proxy for CORS issue.
 
