@@ -59,7 +59,7 @@ func run(targetURL string) error {
 	}
 
 	modifyCORSResponse := func(res *http.Response) error {
-		res.Header.Set("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE")
+		res.Header.Set("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS")
 		res.Header.Set("Access-Control-Allow-Credentials", "true")
 		res.Header.Set("Access-Control-Allow-Origin", origin)
 		return nil
