@@ -16,9 +16,9 @@ builds:
       - CGO_ENABLED=0
 archives:
   - name_template: >-
-    {{- .ProjectName }}_
-    {{- title .Os }}_
-    {{ .Arch }}_
-    {{- if .Arm }}v{{ .Arm }}{{ end -}}
+      {{- .ProjectName }}_
+      {{- title .Os }}_
+      {{ .Arch }}_
+      {{- if .Arm }}v{{ .Arm }}{{ end -}}
 release:
   prerelease: auto
