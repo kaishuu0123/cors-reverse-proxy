@@ -1,11 +1,9 @@
 # CORS Reverse Proxy
 
-[![ReleaseStatus](https://github.com/kaishuu0123/cors-reverse-proxy/workflows/release/badge.svg)][release_status]
 [![GitHub release](https://img.shields.io/github/release/kaishuu0123/cors-reverse-proxy.svg)][releases]
 [![Docker Pulls](https://img.shields.io/docker/pulls/kaishuu0123/cors-reverse-proxy.svg)][docker]
 [![Go Report Card](https://goreportcard.com/badge/github.com/kaishuu0123/cors-reverse-proxy)][report]
 
-[release_status]: https://github.com/kaishuu0123/cors-reverse-proxy/actions?query=workflow%3Arelease
 [releases]: https://github.com/kaishuu0123/cors-reverse-proxy/releases
 [docker]: https://hub.docker.com/r/kaishuu0123/cors-reverse-proxy/
 [report]: https://goreportcard.com/report/github.com/kaishuu0123/cors-reverse-proxy
@@ -28,7 +26,7 @@ Simple reverse proxy for CORS issue.
 docker pull kaishuu0123/cors-reverse-proxy
 
 docker run -it -d \
-  -e CORS_REVERSE_PROXY_TARGET_URL=http://example.com \
+  -e CORS_REVERSE_PROXY_TARGET_URL=http://httpbin.org \
   -e CORS_REVERSE_PROXY_HOST=0.0.0.0 \
   -p 8181:8081 \
   --name cors-reverse-proxy \
@@ -41,7 +39,7 @@ or
 go build
 
 ./cors-reverse-proxy \
-  --target-url http://example.com/ \
+  --target-url http://httpbin.org \
   --host 0.0.0.0
   --port 8888
 ```
@@ -54,5 +52,8 @@ go build
 | --host           | -h        | CORS_REVERSE_PROXY_HOST       | `0.0.0.0`             | localhost |
 | --port           | -p        | CORS_REVERSE_PROXY_PORT       | `8888`                | 8081      |
 | --origin         | -o        | CORS_REVERSE_PROXY_ORIGIN     | `http://example.com/` | `*`       |
+| --debug         |           |        |  | false       |
 
-###### Inspired by: https://github.com/LordotU/local-cors-proxy-go/
+## Inspired by
+
+* <https://github.com/LordotU/local-cors-proxy-go/>

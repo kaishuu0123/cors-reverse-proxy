@@ -22,8 +22,32 @@ var (
 	port          uint64
 	origin        string
 	serverLogging bool
+	debug         bool
 	version       bool
 )
+
+type DebugTransport struct{}
+
+func (DebugTransport) RoundTrip(request *http.Request) (*http.Response, error) {
+	req, err := httputil.DumpRequestOut(request, false)
+	if err != nil {
+		return nil, err
+	}
+	log.Println(string(req))
+
+	response, err := http.DefaultTransport.RoundTrip(request)
+	if err != nil {
+		return nil, err
+	}
+
+	res, err := httputil.DumpResponse(response, false)
+	if err != nil {
+		return nil, err
+	}
+	log.Println(string(res))
+
+	return response, nil
+}
 
 func init() {
 	envTargetURL := os.Getenv("CORS_REVERSE_PROXY_TARGET_URL")
@@ -49,6 +73,7 @@ func init() {
 	pflag.Uint64VarP(&port, "port", "p", envPort, "")
 	pflag.StringVarP(&origin, "origin", "o", envOrigin, "")
 	pflag.BoolVarP(&serverLogging, "server-logging", "l", envServerLogging, "")
+	pflag.BoolVarP(&debug, "debug", "", false, "")
 	pflag.BoolVarP(&version, "version", "v", false, "")
 }
 
@@ -67,6 +92,10 @@ func run(targetURL string) error {
 
 	reverseProxy := httputil.NewSingleHostReverseProxy(target)
 	reverseProxy.ModifyResponse = modifyCORSResponse
+
+	if debug {
+		reverseProxy.Transport = DebugTransport{}
+	}
 	http.Handle("/", reverseProxy)
 
 	addr := host + ":" + strconv.FormatUint(port, 10)
