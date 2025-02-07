@@ -1,6 +1,7 @@
 project_name: cors-reverse-proxy
 env:
   - GO111MODULE=on
+version: 2
 before:
   hooks:
     - go mod tidy
