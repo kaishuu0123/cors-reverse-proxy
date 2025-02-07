@@ -17,8 +17,8 @@ builds:
 archives:
   - name_template: >-
     {{- .ProjectName }}_
-    {{- title .Os }}
-    {{- .Arch }}
-    {{- if .Arm }}v{{ .Arm }}{{ end -}}'
+    {{- title .Os }}_
+    {{ .Arch }}_
+    {{- if .Arm }}v{{ .Arm }}{{ end -}}
 release:
   prerelease: auto
